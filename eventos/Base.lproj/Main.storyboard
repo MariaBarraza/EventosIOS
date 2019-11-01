@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QSU-uZ-ooZ">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,101 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="eventos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Kpw-Mf-eFe">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellEvento" rowHeight="188" id="QTl-h3-NeZ" customClass="CeldaEventoController" customModule="eventos" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="188"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QTl-h3-NeZ" id="kVZ-rZ-UMC">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="187.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="etS-Yt-3dE">
+                                                    <rect key="frame" x="0.0" y="-15" width="414" height="203"/>
+                                                </imageView>
+                                                <view alpha="0.55000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nPX-re-RfA">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="188"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre del evento" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HoQ-Ge-ar8">
+                                                    <rect key="frame" x="20" y="127" width="252" height="37"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fecha" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FDC-KQ-q0C">
+                                                    <rect key="frame" x="323" y="22" width="71" height="33"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="HoQ-Ge-ar8" secondAttribute="trailing" constant="20" symbolic="YES" id="1Xz-TS-1p0"/>
+                                                <constraint firstItem="etS-Yt-3dE" firstAttribute="top" secondItem="kVZ-rZ-UMC" secondAttribute="topMargin" constant="-26" id="25J-7o-uFb"/>
+                                                <constraint firstItem="FDC-KQ-q0C" firstAttribute="top" secondItem="kVZ-rZ-UMC" secondAttribute="topMargin" constant="11" id="313-Ke-VxP"/>
+                                                <constraint firstItem="nPX-re-RfA" firstAttribute="leading" secondItem="kVZ-rZ-UMC" secondAttribute="leading" id="7B1-3G-JEc"/>
+                                                <constraint firstAttribute="trailing" secondItem="nPX-re-RfA" secondAttribute="trailing" id="8pC-ph-beD"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="etS-Yt-3dE" secondAttribute="trailing" constant="-20" id="LAs-GL-oB8"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="HoQ-Ge-ar8" secondAttribute="bottom" constant="13" id="N0K-CB-RQa"/>
+                                                <constraint firstItem="etS-Yt-3dE" firstAttribute="leading" secondItem="kVZ-rZ-UMC" secondAttribute="leadingMargin" constant="-20" id="OEG-Ns-e20"/>
+                                                <constraint firstItem="nPX-re-RfA" firstAttribute="top" secondItem="kVZ-rZ-UMC" secondAttribute="top" id="irr-Cc-tli"/>
+                                                <constraint firstAttribute="bottom" secondItem="nPX-re-RfA" secondAttribute="bottom" constant="-0.5" id="kiS-9M-xGC"/>
+                                                <constraint firstItem="HoQ-Ge-ar8" firstAttribute="leading" secondItem="kVZ-rZ-UMC" secondAttribute="leadingMargin" id="qcI-Lv-2Nb"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="etS-Yt-3dE" secondAttribute="bottom" constant="-11" id="r75-02-QN5"/>
+                                                <constraint firstItem="FDC-KQ-q0C" firstAttribute="trailing" secondItem="kVZ-rZ-UMC" secondAttribute="trailingMargin" id="s53-Ev-NAy"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="imgFlyer" destination="etS-Yt-3dE" id="MO1-cr-EjQ"/>
+                                            <outlet property="lblFecha" destination="FDC-KQ-q0C" id="0jj-SO-Z3b"/>
+                                            <outlet property="lblNombre" destination="HoQ-Ge-ar8" id="vBt-uD-qyu"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="NgF-Nw-dsS"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="C6Z-hs-e6p"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Kpw-Mf-eFe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="1MG-xO-nu3"/>
+                            <constraint firstItem="Kpw-Mf-eFe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9bj-Dr-hai"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Kpw-Mf-eFe" secondAttribute="bottom" id="DtX-On-bne"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Kpw-Mf-eFe" secondAttribute="trailing" id="TUe-tH-HSI"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="hSP-Xs-F7L"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="905.79710144927549" y="164.73214285714286"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="e5A-bY-eyp">
+            <objects>
+                <navigationController id="QSU-uZ-ooZ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8cg-B4-vZh">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="5Wd-YM-rVH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fe1-gh-RAw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-230" y="165"/>
         </scene>
     </scenes>
 </document>
