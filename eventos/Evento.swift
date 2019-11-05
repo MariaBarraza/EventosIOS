@@ -23,8 +23,22 @@ class Evento {
     }
     
     init(diccionar : NSDictionary){
-        self.nombre = "nombre"
-        self.fecha = "fecha"
-        self.urlFlyer = "urlFlyer"
+        self.nombre = ""
+        if let title = diccionar.value(forKey: "title") as? NSDictionary {
+            if let rendered = title.value(forKey: "rendered") as? String {
+                self.nombre = rendered
+            }
+        }
+        
+        self.fecha = ""
+        self.urlFlyer = ""
+        if let acf = diccionar.value(forKey: "acf") as? NSDictionary {
+            if let fecha = acf.value(forKey: "fecha") as? String{
+                self.fecha = fecha
+            }
+            if let flyer = acf.value(forKey: "flyer") as? String{
+                self.urlFlyer = flyer
+            }
+        }
     }
 }
